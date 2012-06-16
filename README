@@ -1,0 +1,46 @@
+NAME
+    Test::Mock::Lite - Lite-weight heavy-hitting mock object library,
+                       primarily for unit testing.
+
+SYNOPSIS
+    XXX
+
+DESCRIPTION
+    This module allows you to mock out a target class and install arbitrary
+    code in its place. The mocking behavior is lexically scoped to a destructor
+    object; once the destructor object goes out of scope, the original class
+    is re-installed.
+
+APOLOGY
+    Is this really a wheel that needs reinvention? ... Yes.
+
+    First and foremost, installing a testing library should require few
+    dependencies. Adding Test::Mock::Lite to your toolchain means installing
+    one other library, Test::Resub.
+
+    Second, other mocking libraries have various bugs in them:
+
+    * they may not handle prototyped subs correctly;
+    * they probably blow away scalars and other non-subs that have the same
+      name as the subs you are mocking out
+    * the mocked objects may not correctly hide themselves in a callstack
+
+SEE ALSO
+    Test::MockObject
+    Test::Mock::Guard
+    Mock::Quick::Class
+
+AUTHOR AND COPYRIGHT
+    (c) Belden Lyman 2012, belden@cpan.org
+
+SUPPORT AND CONTRIBUTING
+    You may find documentation by running 'perldoc Test::Mock::Lite'.
+    Examples are available in the t/ directory. The comparisons/
+    directory shows how the various mocking libraries handle the same
+    tasks.
+
+    This library is available on GitHub at https://github.com/belden/test-mock-lite.
+
+LICENSE
+    Test::Mock::Lite is free software. You may modify and redistribute it
+    under the same terms as the Perl language itself.
